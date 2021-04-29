@@ -91,7 +91,7 @@ Content-Type: text/html;
 
 All [Turbo Frame HTML attributes](https://turbo.hotwire.dev/reference/frames#html-attributes) are supported, including [`id`](https://turbo.hotwire.dev/reference/frames#basic-frame), [`src`](https://turbo.hotwire.dev/reference/frames#lazy-loaded-frame), [`target`](https://turbo.hotwire.dev/reference/frames#frame-that-drives-navigation-to-replace-whole-page), `loading`, `busy`, `disabled`, `autoscroll`, and `autoscrollBlock`.
 
-See the [`RenderTurboFrameOptions`](./src/render-turbo-frame.decorator.ts:19-28) interface for type definitions.
+See the [`RenderTurboFrameOptions`](./src/render-turbo-frame.decorator.ts#L19-L28) interface for type definitions.
 
 ## `@RenderTurboStream(view: string, options: RenderTurboStreamOptions)`
 
@@ -143,7 +143,7 @@ Content-Type: text/vnd.turbo-stream.html;
 </turbo-stream>
 ```
 
-See the [`RenderTurboStreamOptions`](./src/render-turbo-stream.decorator.ts:13-16) interface for type definitions.
+See the [`RenderTurboStreamOptions`](./src/render-turbo-stream.decorator.ts#L13-L16) interface for type definitions.
 
 ## `@RenderTurboStreamAppend(view: string, options: Omit<RenderTurboStreamOptions, 'action'>)`
 This is a convenience decorator that's equivalent to `@RenderTurboStream('view', { action: 'append', ...options })`
