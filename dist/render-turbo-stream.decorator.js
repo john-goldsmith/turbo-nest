@@ -19,7 +19,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RenderTurboStreamRemove = exports.RenderTurboStreamUpdate = exports.RenderTurboStreamReplace = exports.RenderTurboStreamPrepend = exports.RenderTurboStreamAppend = exports.turboStreamTargetMetadataKey = exports.turboStreamActionMetadataKey = exports.turboStreamViewMetadataKey = void 0;
+exports.RenderTurboStreamAfter = exports.RenderTurboStreamBefore = exports.RenderTurboStreamRemove = exports.RenderTurboStreamUpdate = exports.RenderTurboStreamReplace = exports.RenderTurboStreamPrepend = exports.RenderTurboStreamAppend = exports.turboStreamTargetMetadataKey = exports.turboStreamActionMetadataKey = exports.turboStreamViewMetadataKey = void 0;
 var common_1 = require("@nestjs/common");
 var render_turbo_stream_interceptor_1 = __importDefault(require("./render-turbo-stream.interceptor"));
 function key() {
@@ -60,4 +60,12 @@ function RenderTurboStreamRemove(options) {
     return common_1.applyDecorators(common_1.SetMetadata(exports.turboStreamActionMetadataKey, 'remove'), common_1.SetMetadata(exports.turboStreamTargetMetadataKey, options.target), common_1.UseInterceptors(render_turbo_stream_interceptor_1.default));
 }
 exports.RenderTurboStreamRemove = RenderTurboStreamRemove;
+function RenderTurboStreamBefore(view, options) {
+    return helper(view, __assign(__assign({}, options), { action: 'before' }));
+}
+exports.RenderTurboStreamBefore = RenderTurboStreamBefore;
+function RenderTurboStreamAfter(view, options) {
+    return helper(view, __assign(__assign({}, options), { action: 'after' }));
+}
+exports.RenderTurboStreamAfter = RenderTurboStreamAfter;
 //# sourceMappingURL=render-turbo-stream.decorator.js.map

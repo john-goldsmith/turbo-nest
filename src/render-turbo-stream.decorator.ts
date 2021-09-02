@@ -11,7 +11,7 @@ export const turboStreamActionMetadataKey = key('action');
 export const turboStreamTargetMetadataKey = key('target');
 
 interface RenderTurboStreamOptions {
-  action: 'append' | 'prepend' | 'replace' | 'update' | 'remove';
+  action: 'append' | 'prepend' | 'replace' | 'update' | 'remove' | 'before' | 'after';
   target: string;
 }
 
@@ -79,4 +79,24 @@ export function RenderTurboStreamRemove(
     SetMetadata(turboStreamTargetMetadataKey, options.target),
     UseInterceptors(RenderTurboStreamInterceptor)
   );
+}
+
+export function RenderTurboStreamBefore(
+  view: string,
+  options: Omit<RenderTurboStreamOptions, 'action'>
+) {
+  return helper(view, {
+    ...options,
+    action: 'before'
+  });
+}
+
+export function RenderTurboStreamAfter(
+  view: string,
+  options: Omit<RenderTurboStreamOptions, 'action'>
+) {
+  return helper(view, {
+    ...options,
+    action: 'after'
+  });
 }

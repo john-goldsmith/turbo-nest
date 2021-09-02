@@ -37,6 +37,8 @@ This package exports two primary method decorators...
 * `@RenderTurboStreamReplace()`
 * `@RenderTurboStreamUpdate()`
 * `@RenderTurboStreamRemove()`
+* `@RenderTurboStreamBefore()`
+* `@RenderTurboStreamAfter()`
 
 ```typescript
 import { RenderTurboFrame, RenderTurboStream } from 'turbo-nest';
@@ -169,6 +171,16 @@ See the [Turbo documentation](https://turbo.hotwire.dev/reference/streams#update
 This is a convenience decorator that's equivalent to `@RenderTurboStream({ action: 'remove', ...options })`.
 
 ⚠️ Note that unlike the other `@RenderTurboStream` decorators, the `view` argument is omitted here because, per the [Turbo documentation](https://turbo.hotwire.dev/reference/streams#remove), inner HTML is not needed.
+
+## `@RenderTurboStreamBefore(view: string, options: Omit<RenderTurboStreamOptions, 'action'>)`
+This is a convenience decorator that's equivalent to `@RenderTurboStream('view', { action: 'before', ...options })`
+
+See the [Turbo documentation](https://turbo.hotwire.dev/reference/streams#before) for additional info.
+
+## `@RenderTurboStreamAfter(view: string, options: Omit<RenderTurboStreamOptions, 'action'>)`
+This is a convenience decorator that's equivalent to `@RenderTurboStream('view', { action: 'after', ...options })`
+
+See the [Turbo documentation](https://turbo.hotwire.dev/reference/streams#after) for additional info.
 
 # Found a bug? 🪲
 [File an issue](https://github.com/john-goldsmith/turbo-nest/issues/new)!

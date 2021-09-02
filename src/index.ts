@@ -5,5 +5,7 @@ export {
   RenderTurboStreamPrepend,
   RenderTurboStreamRemove,
   RenderTurboStreamReplace,
-  RenderTurboStreamUpdate
+  RenderTurboStreamUpdate,
+  RenderTurboStreamAfter,
+  RenderTurboStreamBefore
 } from './render-turbo-stream.decorator';
